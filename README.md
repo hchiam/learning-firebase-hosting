@@ -1,47 +1,83 @@
-# Learning template [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://github.com/hchiam/learning-template/blob/main/LICENSE)
+# Learning Firebase Hosting
 
-Just one of the things I'm learning. https://github.com/hchiam/learning
+Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
-(To use this template fast with [`gh` CLI](https://github.com/hchiam/learning-gh), you can run [`gh repo create --template learning-template learning-...`](https://cli.github.com/manual/gh_repo_create) or [set up a custom shortcut CLI command](https://github.com/hchiam/learning-bash-scripts/blob/main/gh-cli-create-learning-repo-from-template.sh).)
-
-(To create a convenience script repo, use this template instead: https://github.com/hchiam/convenience)
-
-(To create a website fast, use a code generator like [`create-next-app`](https://github.com/hchiam/learning-nextjs), [`sapper`](https://github.com/hchiam/learning-sapper), a [svelte template](https://github.com/sveltejs/template), [`yo`](https://yeoman.io/generators), or my [project-template](https://github.com/hchiam/project-template))
-
-(Use the redirect template https://github.com/hchiam/learning-redirect to enhance discoverability. Or [set up a custom shortcut CLI command](https://github.com/hchiam/learning-bash-scripts/blob/main/gh-cli-create-learning-redirect-repo-from-template.sh))
-
-<!-- Add reference link(s) here -->
-
-## From scratch
-
-Using [`yarn`](https://github.com/hchiam/learning-yarn):
-
-```bash
-yarn add
+```sh
+npm install -g firebase-tools
+firebase login
+firebase init
 ```
 
-Or with `npm`:
+then either one of the two following:
 
-```bash
-npm install
+## 1 of 2
+
+Install:
+
+```sh
+npm install firebase
 ```
 
-And then:
+```js
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-```bash
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "...",
+  authDomain: "....firebaseapp.com",
+  databaseURL: "https://....firebaseio.com",
+  projectId: "...",
+  storageBucket: "....firebasestorage.app",
+  messagingSenderId: "...",
+  appId: "...",
+  measurementId: "..."
+};
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 ```
 
-## Starting by testing out this repo <!-- Replace "template"s and "# and then ..."s in this section -->
+## 2 of 2
 
-Using [`yarn`](https://github.com/hchiam/learning-yarn): (triple-click to select all)
+or use script tags:
 
-```bash
-git clone https://github.com/hchiam/learning-template.git && cd learning-template && yarn; # and then ...
+```html
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "...",
+    authDomain: "....firebaseapp.com",
+    databaseURL: "https://....firebaseio.com",
+    projectId: "...",
+    storageBucket: "....firebasestorage.app",
+    messagingSenderId: "...",
+    appId: "...",
+    measurementId: "..."
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 ```
 
-Or with `npm`: (triple-click to select all)
+## either way, this is the last step
 
-```bash
-git clone https://github.com/hchiam/learning-template.git && cd learning-template && npm install; # and then ...
+```sh
+firebase deploy
 ```
+
+e.g.: <https://trysterollup.web.app/>
