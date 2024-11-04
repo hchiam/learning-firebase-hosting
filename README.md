@@ -8,6 +8,8 @@ firebase login
 firebase init
 ```
 
+(Aside: I had to `firebase logout` and then `firebase login` to get `firebase init` to work.)
+
 then either one of the two following:
 
 ## 1 of 2
