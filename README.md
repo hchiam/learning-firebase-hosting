@@ -83,3 +83,7 @@ firebase deploy
 ```
 
 e.g.: <https://trysterollup.web.app/>
+
+## more to learn
+
+<https://github.com/hchiam/learning-firestore>
